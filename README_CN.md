@@ -66,13 +66,16 @@ TKA 截骨平面。
 
 | Run级结果 | Adaptive (n=18) | Fixed k=10 (n=18) |
 | --- | ---: | ---: |
-| TRE RMSE，均值 ± SD | 1.008 ± 0.111 mm | 2.458 ± 0.438 mm |
+| 7个held-out目标点的RMS TRE，run间均值 ± SD | 1.008 ± 0.111 mm | 2.458 ± 0.438 mm |
 | 7个TRE点全部≤3 mm | 18/18 | 3/18 |
-| 配准采集时间，均值 | 54.2 s | 23.3 s |
 
-校正后的 Adaptive-minus-Fixed TRE RMSE 估计值为 **−1.450 mm**，HC3 95%
+每次run的RMS TRE按
+`sqrt((TRE₁² + ... + TRE₇²) / 7)` 计算，其中每个TRE都是一个held-out目标点
+上的欧氏目标配准误差。它不是配准点的拟合RMSE。
+
+校正后的 Adaptive-minus-Fixed run级RMS TRE 估计值为 **−1.450 mm**，HC3 95%
 置信区间为 **−1.682至−1.218 mm**。这些数据支持在当前 phantom 与实验协议
-下的精度和可靠性差异，但不支持速度优势，也不能外推为临床有效性或患者安全性。
+下的精度和可靠性差异，但不能外推为临床有效性或患者安全性。
 
 完整口径见 [`docs/open-data-summary.md`](docs/open-data-summary.md)，字段定义见
 [`metadata/data_dictionary.csv`](metadata/data_dictionary.csv)。

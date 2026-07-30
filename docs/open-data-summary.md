@@ -10,10 +10,14 @@
 
 ## Primary result
 
-- Adaptive run-level TRE RMSE: 1.008 +/- 0.111 mm.
-- Fixed k=10 run-level TRE RMSE: 2.458 +/- 0.438 mm.
+- Adaptive run-level RMS TRE: 1.008 +/- 0.111 mm.
+- Fixed k=10 run-level RMS TRE: 2.458 +/- 0.438 mm.
 - Adjusted Adaptive-minus-Fixed effect: -1.450 mm (HC3 95% CI -1.682 to -1.218 mm).
 - All seven TRE points were <=3 mm in 18/18 Adaptive runs and 3/18 Fixed runs (two-sided Fisher p=2.93e-07).
+
+RMS TRE is calculated within each run as the root mean square of the seven
+point-level Euclidean target registration errors. It is distinct from
+registration-point fit RMSE.
 
 ## Acquisition and mechanism
 
@@ -22,11 +26,6 @@
 - Mean registration-point bounding-box diagonal increased by 60.76 mm.
 - Mean pairwise distance increased by 25.41 mm.
 - Translation and rotation uncertainty decreased by 7.36 mm and 2.15 degrees, respectively.
-
-## Workflow cost
-
-- Registration acquisition duration was 54.2 s for Adaptive and 23.3 s for Fixed k=10.
-- These data support accuracy, reliability, and spatial-information gains under a sparse point budget; they do not support a speed advantage over Fixed k=10.
 
 ## Data-quality status
 

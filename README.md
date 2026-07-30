@@ -106,15 +106,18 @@ independent experiments.
 
 | Run-level outcome | Adaptive (n=18) | Fixed k=10 (n=18) |
 | --- | ---: | ---: |
-| TRE RMSE, mean ± SD | 1.008 ± 0.111 mm | 2.458 ± 0.438 mm |
+| RMS TRE across 7 held-out targets, mean ± SD across runs | 1.008 ± 0.111 mm | 2.458 ± 0.438 mm |
 | All 7 TRE points ≤3 mm | 18/18 runs | 3/18 runs |
-| Registration acquisition duration, mean | 54.2 s | 23.3 s |
 
-The adjusted Adaptive-minus-Fixed TRE RMSE estimate was **−1.450 mm** with an
+For each run, the reported RMS TRE is
+`sqrt((TRE₁² + ... + TRE₇²) / 7)`, where each TRE is the Euclidean target
+registration error at one held-out landmark. It is not the registration-point
+fit RMSE.
+
+The adjusted Adaptive-minus-Fixed run-level RMS TRE estimate was **−1.450 mm** with an
 HC3 95% confidence interval of **−1.682 to −1.218 mm**. These results support a
 phantom accuracy and reliability difference under the tested protocol. They do
-not demonstrate a speed advantage, clinical effectiveness, or generalization
-to patients.
+not demonstrate clinical effectiveness or generalization to patients.
 
 Full definitions and supporting values are available in
 [`docs/open-data-summary.md`](docs/open-data-summary.md) and

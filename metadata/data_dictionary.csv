@@ -13,7 +13,7 @@ run_level_public.csv,source_note_original,string,,Nonempty note retained from th
 run_level_public.csv,qc_note,string,,Normalized quality-control note for public release.
 run_level_public.csv,stop_k,integer,points,Accepted registration points at transform freeze.
 run_level_public.csv,fit_rmse_mm,float,mm,Registration fit RMSE at the frozen transform.
-run_level_public.csv,tre_rmse_mm,float,mm,RMSE across seven held-out TRE targets; primary endpoint.
+run_level_public.csv,tre_rmse_mm,float,mm,RMS of seven point-level Euclidean TRE distances; primary endpoint and distinct from registration fit RMSE.
 run_level_public.csv,tre_p95_mm,float,mm,Empirical 95th percentile of seven TRE errors.
 run_level_public.csv,tre_max_mm,float,mm,Maximum held-out TRE error in the run.
 run_level_public.csv,tre_pass_rate,float,fraction,Fraction of held-out TRE points not exceeding 3 mm.
