@@ -1,0 +1,37 @@
+protocol,operator_id,apple_vision_pro_id,anatomy,tre_group_id,n
+Adaptive,OP-01,VP-A,Femur,TRE_GROUP_2,1
+Adaptive,OP-01,VP-A,Tibia,TRE_GROUP_1,1
+Adaptive,OP-01,VP-A,Tibia,TRE_GROUP_3,1
+Adaptive,OP-01,VP-B,Femur,TRE_GROUP_1,1
+Adaptive,OP-01,VP-B,Femur,TRE_GROUP_3,1
+Adaptive,OP-01,VP-B,Tibia,TRE_GROUP_2,1
+Adaptive,OP-02,VP-A,Femur,TRE_GROUP_1,1
+Adaptive,OP-02,VP-A,Femur,TRE_GROUP_3,1
+Adaptive,OP-02,VP-A,Tibia,TRE_GROUP_2,1
+Adaptive,OP-02,VP-B,Femur,TRE_GROUP_2,1
+Adaptive,OP-02,VP-B,Tibia,TRE_GROUP_1,1
+Adaptive,OP-02,VP-B,Tibia,TRE_GROUP_3,1
+Adaptive,OP-03,VP-A,Femur,TRE_GROUP_2,1
+Adaptive,OP-03,VP-A,Tibia,TRE_GROUP_1,1
+Adaptive,OP-03,VP-A,Tibia,TRE_GROUP_3,1
+Adaptive,OP-03,VP-B,Femur,TRE_GROUP_1,1
+Adaptive,OP-03,VP-B,Femur,TRE_GROUP_3,1
+Adaptive,OP-03,VP-B,Tibia,TRE_GROUP_2,1
+Fixed k=10,OP-01,VP-A,Femur,TRE_GROUP_1,1
+Fixed k=10,OP-01,VP-A,Femur,TRE_GROUP_3,1
+Fixed k=10,OP-01,VP-A,Tibia,TRE_GROUP_2,1
+Fixed k=10,OP-01,VP-B,Femur,TRE_GROUP_2,1
+Fixed k=10,OP-01,VP-B,Tibia,TRE_GROUP_1,1
+Fixed k=10,OP-01,VP-B,Tibia,TRE_GROUP_3,1
+Fixed k=10,OP-02,VP-A,Femur,TRE_GROUP_2,1
+Fixed k=10,OP-02,VP-A,Tibia,TRE_GROUP_1,1
+Fixed k=10,OP-02,VP-A,Tibia,TRE_GROUP_3,1
+Fixed k=10,OP-02,VP-B,Femur,TRE_GROUP_1,1
+Fixed k=10,OP-02,VP-B,Femur,TRE_GROUP_3,1
+Fixed k=10,OP-02,VP-B,Tibia,TRE_GROUP_2,1
+Fixed k=10,OP-03,VP-A,Femur,TRE_GROUP_1,1
+Fixed k=10,OP-03,VP-A,Femur,TRE_GROUP_3,1
+Fixed k=10,OP-03,VP-A,Tibia,TRE_GROUP_2,1
+Fixed k=10,OP-03,VP-B,Femur,TRE_GROUP_2,1
+Fixed k=10,OP-03,VP-B,Tibia,TRE_GROUP_1,1
+Fixed k=10,OP-03,VP-B,Tibia,TRE_GROUP_3,1

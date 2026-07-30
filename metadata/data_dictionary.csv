@@ -1,0 +1,44 @@
+table,variable,type,unit,definition
+run_level_public.csv,sequence,integer,1,Formal protocol sequence number (1-36).
+run_level_public.csv,package_name,string,,Unique exported run package stem.
+run_level_public.csv,trial_id,string,,Application-generated trial identifier.
+run_level_public.csv,protocol,category,,Adaptive or Fixed k=10 acquisition protocol.
+run_level_public.csv,operator_id,category,,Pseudonymous operator identifier.
+run_level_public.csv,apple_vision_pro_id,category,,Pseudonymous headset identifier.
+run_level_public.csv,device_chip,category,,Headset chip generation: M2 or M5.
+run_level_public.csv,anatomy,category,,Tibia or Femur phantom anatomy.
+run_level_public.csv,tre_group_id,category,,Prespecified held-out TRE target group.
+run_level_public.csv,analysis_status,category,,Formal analysis inclusion status.
+run_level_public.csv,source_note_original,string,,Nonempty note retained from the experiment record.
+run_level_public.csv,qc_note,string,,Normalized quality-control note for public release.
+run_level_public.csv,stop_k,integer,points,Accepted registration points at transform freeze.
+run_level_public.csv,fit_rmse_mm,float,mm,Registration fit RMSE at the frozen transform.
+run_level_public.csv,tre_rmse_mm,float,mm,RMSE across seven held-out TRE targets; primary endpoint.
+run_level_public.csv,tre_p95_mm,float,mm,Empirical 95th percentile of seven TRE errors.
+run_level_public.csv,tre_max_mm,float,mm,Maximum held-out TRE error in the run.
+run_level_public.csv,tre_pass_rate,float,fraction,Fraction of held-out TRE points not exceeding 3 mm.
+run_level_public.csv,tre_points_n,integer,points,Number of held-out TRE samples in the run.
+run_level_public.csv,all_7_tre_within_3mm,boolean,,True when all seven held-out TRE errors are <=3 mm.
+run_level_public.csv,registration_duration_sec,float,s,Elapsed time from first to last accepted registration point.
+run_level_public.csv,total_duration_sec,float,s,Application-recorded formal run duration.
+run_level_public.csv,registration_bbox_diagonal_mm,float,mm,Diagonal of the registration-point bounding box.
+run_level_public.csv,pairwise_min_distance_mm,float,mm,Minimum pairwise distance among accepted registration points.
+run_level_public.csv,pairwise_mean_distance_mm,float,mm,Mean pairwise distance among accepted registration points.
+run_level_public.csv,translation_uncertainty_mm,float,mm,Translation uncertainty reported by the registration estimator.
+run_level_public.csv,rotation_uncertainty_deg,float,degree,Rotation uncertainty reported by the registration estimator.
+run_level_public.csv,enhanced_model_detection_count,integer,detections,Enhanced visual-model detections saved at export.
+run_level_public.csv,tre_tracking_quality_mean,float,0-1,Mean tracking-quality score across held-out TRE samples.
+run_level_public.csv,point_savings_vs_49,integer,points,49 minus stop_k; 49 is the candidate registration pool.
+run_level_public.csv,point_savings_fraction_vs_49,float,fraction,point_savings_vs_49 divided by 49.
+tre_point_level_public.csv,package_name,string,,Unique exported run package stem.
+tre_point_level_public.csv,trial_id,string,,Application-generated trial identifier.
+tre_point_level_public.csv,landmark_index,integer,,Index within the seven-point held-out plan.
+tre_point_level_public.csv,landmark_name,string,,Held-out target landmark name.
+tre_point_level_public.csv,error_mm,float,mm,Target registration error at this held-out landmark.
+tre_point_level_public.csv,passed,boolean,,Application-level TRE point pass indicator.
+tre_point_level_public.csv,tracking_quality,float,0-1,Tracking-quality score for the TRE observation.
+tre_point_level_public.csv,protocol,category,,Adaptive or Fixed k=10 protocol.
+tre_point_level_public.csv,operator_id,category,,Pseudonymous operator identifier.
+tre_point_level_public.csv,apple_vision_pro_id,category,,Pseudonymous headset identifier.
+tre_point_level_public.csv,anatomy,category,,Tibia or Femur phantom anatomy.
+tre_point_level_public.csv,tre_group_id,category,,Prespecified held-out TRE group.

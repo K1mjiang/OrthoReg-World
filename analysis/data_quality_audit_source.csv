@@ -1,0 +1,10 @@
+check,result,status,detail
+Planned formal runs,36,pass,18 Adaptive and 18 Fixed k=10
+Planned packages matched,36,pass,One-to-one package-name join
+Protocol mismatches,0,pass,Workbook versus trial_metadata.csv
+Anatomy mismatches,0,pass,Workbook versus trial_metadata.csv
+TRE-group mismatches,0,pass,Workbook versus trial_metadata.csv
+Completed 7-point TRE plans,36,pass,Seven held-out TRE samples per formal run
+Frozen transforms before TRE,36,pass,Online stop freeze record present
+Unplanned exports,2,excluded,Model-off preliminary runs explicitly documented and replaced
+Special-note formal run 32,1,included,Current exported attempt complete; exclusion sensitivity unchanged
