@@ -1,114 +1,126 @@
 # OrthoReg-World
 
-基于 Apple Vision Pro 的混合现实骨科配准与 TKA 导航研究
+面向自适应混合现实骨科配准的影像驱动在线世界模型
 
-[English](README.md)
+[English](README.md) · [流程演示视频](https://youtu.be/YVuVoCD0BBM) · [下载公开元数据](data/TMI_OrthoRegWorld_Online_Adaptive_Metadata.zip)
 
-[![OrthoReg 混合现实 TKA 导航演示](assets/demo-overview.jpg)](https://youtu.be/YVuVoCD0BBM)
+![Status](https://img.shields.io/badge/status-research%20prototype-6f42c1)
+![Public data](https://img.shields.io/badge/public%20data-18%20Adaptive%20sessions-0b7fab)
+![License](https://img.shields.io/badge/license-CC%20BY%204.0-green)
+
+<p align="center">
+  <a href="https://youtu.be/YVuVoCD0BBM">
+    <img src="assets/demo-overview.jpg" alt="OrthoReg-World 在 Apple Vision Pro 上的流程演示" width="900">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://youtu.be/YVuVoCD0BBM"><strong>▶ 在 YouTube 播放完整流程视频</strong></a>
+</p>
+
+> GitHub README 不支持直接嵌入 YouTube 播放器，因此点击预览图或播放链接后会进入 YouTube。
 
 ## 项目简介
 
-**OrthoReg-World** 是一个运行于 Apple Vision Pro 的混合现实骨科导航科研原型。
-当前演示流程包括胫骨配准、股骨配准，以及在统一空间坐标环境中显示规划的虚拟
-TKA 截骨平面。
+OrthoReg-World 是一个运行于 Apple Vision Pro 的自适应混合现实骨科配准研究原型。系统维护影像驱动的在线世界模型，在采集过程中持续评估配准质量，并判断当前观测证据是否已经充分。演示视频展示了股骨和胫骨配准，以及全膝关节置换术截骨平面的可视化。
 
-本仓库作为项目的公开 GitHub 首页与实验数据发布仓库，与私有主程序仓库完全
-分离。实验均在骨科 phantom 上完成，不涉及患者或真实手术。
+本仓库用于公开项目介绍和数据。Enterprise API 集成、应用源代码、部署凭据、原始相机图像以及患者数据均不在公开范围内。
 
-## 视频演示
+## 与论文一致的实验说明
 
-视频展示以下流程：
+论文报告了两个相关但彼此独立的研究，两者的样本范围不能合并表述。
 
-1. 胫骨空间配准；
-2. 股骨空间配准；
-3. 已配准解剖模型的空间显示；
-4. 虚拟 TKA 截骨平面显示。
+### 前瞻性 Adaptive stop-and-complete 研究
 
-▶ **[在 YouTube 观看完整演示](https://youtu.be/YVuVoCD0BBM)**
+- 18 次使用 Adaptive 协议的真实 HMD 采集会话。
+- 本仓库的公开 ZIP 包含这 18 个会话的去标识化、非像素元数据。
+- 审计记录保留原始 QC 信息，包括两个会话中的重复或测量无效 TRE 记录。
 
-## 本仓库公开的内容
+### Adaptive 与 Fixed 的受约束随机化比较
 
-- 项目目的与高层工作流程
-- Vision Pro phantom 演示画面
-- 脱敏后的 run 级与 TRE 点级实验数据
-- 公开工作流事件和质量警告汇总
-- 数据字典、匿名设备映射及分析结果
-- 不依赖第三方库的数据验证脚本
+- 36 个正式 runs：Adaptive 18 个，Fixed-k=10 18 个。
+- 覆盖 3 名操作者、2 台 Vision Pro、股骨与胫骨，以及 3 组独立目标点布局。
+- 在采集开始前，预先冻结的受约束随机化方案为每个 operator–device–anatomy–layout cell 分配一个协议。
+- 每个 run 使用 7 个独立目标点，共分析 252 个 held-out target errors。
 
-## 不公开的内容
+预先规定的 run-level 终点是 7 个目标点的目标配准误差均方根（**TRE RMSE**），不是点云 RMSE，也不是其他配准残差。
 
-- Vision Pro 主程序完整源码
-- 专有配准和导航模块
-- Enterprise API 集成及服务实现细节
-- 凭据、内部端点、设备序列号和私有日志
-- 未公开模型、开发数据及内部评估材料
-- 尚未完成逐帧隐私审查的原始图像和视频导出
-
-## 开放实验数据
-
-公开数据来自一项前瞻性、平衡的 phantom 对照实验。
-
-| 项目 | 公开数据 |
-| --- | ---: |
-| 正式完成的 runs | 36 |
-| Adaptive / Fixed k=10 | 18 / 18 |
-| 匿名操作者 | 3 |
-| 匿名 Vision Pro 设备 | 2 |
-| 解剖结构 | Tibia 与 Femur |
-| Held-out TRE groups | 3 |
-| 每次 run 的 held-out TRE 点 | 7 |
-| TRE 点级记录总数 | 252 |
-
-该实验没有随机分配记录，因此只能表述为“前瞻性、平衡对照”，不能表述为
-随机试验。主分析单位是一次完整 run，不得将252个TRE点视为252次独立实验。
-
-### Phantom 主要结果
-
-| Run级结果 | Adaptive (n=18) | Fixed k=10 (n=18) |
+| 论文结果 | Adaptive | Fixed-k=10 |
 | --- | ---: | ---: |
-| 7个held-out目标点的RMS TRE，run间均值 ± SD | 1.008 ± 0.111 mm | 2.458 ± 0.438 mm |
-| 7个TRE点全部≤3 mm | 18/18 | 3/18 |
+| Runs | 18 | 18 |
+| 平均 TRE RMSE | 1.01 ± 0.11 mm | 2.46 ± 0.44 mm |
+| 7 个目标点全部 ≤ 3 mm 的 runs | 18/18 | 3/18 |
 
-每次run的RMS TRE按
-`sqrt((TRE₁² + ... + TRE₇²) / 7)` 计算，其中每个TRE都是一个held-out目标点
-上的欧氏目标配准误差。它不是配准点的拟合RMSE。
+校正后的 Adaptive-minus-Fixed 差值为 **−1.45 mm**，HC3 95% 置信区间为 **−1.68 至 −1.22 mm**。
 
-校正后的 Adaptive-minus-Fixed run级RMS TRE 估计值为 **−1.450 mm**，HC3 95%
-置信区间为 **−1.682至−1.218 mm**。这些数据支持在当前 phantom 与实验协议
-下的精度和可靠性差异，但不能外推为临床有效性或患者安全性。
+以上是论文报告的比较结果。可下载 ZIP 是另一个 18-session Adaptive 元数据补充包，其中**不包含** Fixed-k 比较数据包或受约束随机化方案。详见[论文与公开数据对应关系](docs/manuscript-data-alignment.md)。
 
-完整口径见 [`docs/open-data-summary.md`](docs/open-data-summary.md)，字段定义见
-[`metadata/data_dictionary.csv`](metadata/data_dictionary.csv)。
+## 公开元数据包
 
-## 数据验证
+[下载 `TMI_OrthoRegWorld_Online_Adaptive_Metadata.zip`](data/TMI_OrthoRegWorld_Online_Adaptive_Metadata.zip)
+
+该数据包包含 18 个正式 Adaptive 会话的去标识化元数据、审计表、分析支持表、数据结构说明、校验和以及非像素内容验证脚本。
+
+| 数据包属性 | 数值 |
+| --- | ---: |
+| 真实采集会话 | 18 |
+| 协议 | 仅 Adaptive |
+| 解压后的文件数 | 967 |
+| 原始图像、视频、深度、截图或像素数据 | 无 |
+| 源数据中的设备编号 | 不可用（`NA`） |
+
+### 终点数据的重要说明
+
+数据包保留了与源数据一致的原始审计记录，因此原始 session summary 的 TRE 字段可能包含重复或测量无效的观测。复现论文口径的 session endpoint 时，应使用 analysis-support 表中“每个目标点最新且唯一的有效观测”字段，并保留随附的 QC 标记。不要静默删除原始审计记录，也不要把已标记的原始 summary 数值直接当作最终终点。
+
+### 下载后验证
+
+在仓库根目录运行：
 
 ```bash
-python3 scripts/validate_open_data.py
+shasum -a 256 -c MANIFEST_SHA256.txt
+unzip data/TMI_OrthoRegWorld_Online_Adaptive_Metadata.zip
+cd TMI_OrthoRegWorld_Online_Adaptive_Metadata
+python3 scripts/verify_no_frames.py . --expected-sessions 18
 ```
 
-验证脚本会检查文件和行数、唯一标识符、实验分层平衡、每次run的7个TRE点、
-跨表覆盖、重复记录、公开统计结果一致性，以及常见敏感信息模式。
+数据包内的验证脚本会检查 manifest、会话数量、校验和清单，并确认不存在帧图像或其他像素数据。
 
-公开的工作流事件表为保持与源导出一致，保留了1条完全重复的规划事件。如果进行
-事件频次分析，应先按整行进行去重。
+## 仓库结构
 
-## 开源边界
+```text
+OrthoReg-World/
+├── README.md
+├── README_CN.md
+├── LICENSE
+├── MANIFEST_SHA256.txt
+├── SECURITY.md
+├── assets/
+│   └── demo-overview.jpg
+├── data/
+│   ├── README.md
+│   └── TMI_OrthoRegWorld_Online_Adaptive_Metadata.zip
+└── docs/
+    ├── data-availability-statement.txt
+    └── manuscript-data-alignment.md
+```
 
-公开数据中使用 `OP-01` 至 `OP-03` 表示匿名操作者，使用 `VP-A` 和 `VP-B`
-表示匿名设备，不发布硬件序列号。原始实验压缩包及视觉帧不进入本仓库。
+## 使用范围与限制
 
-本仓库中的公开实验数据、文档、分析结果、演示图片和验证代码采用
-[Creative Commons Attribution 4.0 International](LICENSE) 许可证。复用时应注明
-“OrthoReg-World project and 36-run phantom comparison dataset”，链接至本仓库和
-CC BY 4.0 许可证，并说明是否进行过修改。
+OrthoReg-World 是在受控 phantom 实验中评估的研究原型，不是医疗器械，未经批准用于临床决策，不能用于患者诊疗。公开元数据不包含私有应用代码或受许可限制的 Enterprise 服务。
 
-该许可证不适用于未进入本仓库的 OrthoReg 私有主程序、Enterprise API 集成、
-专有模块、原始导出或其他非公开材料。
+## 引用
 
-## 免责声明
+在正式出版信息可用前，可按以下方式引用：
 
-OrthoReg-World 仅用于科研与工程验证，不得用于诊断、治疗、手术规划或真实术中
-导航。公开的 phantom 实验结果不构成患者安全性、临床疗效或监管批准证明。
+```text
+Jiang K, Fan W, Shi H, Hu L, Lin Z, Zeng B, Chen X.
+OrthoReg-World: An Imaging-Grounded Online World Model for Adaptive
+Mixed-Reality Orthopedic Registration. Research project and public
+metadata supplement, 2026.
+https://github.com/K1mjiang/OrthoReg-World
+```
 
-Apple Vision Pro 是 Apple Inc. 的商标。本独立研究项目与 Apple 无附属关系，
-亦未获得 Apple 背书。
+## 许可证
+
+本仓库公开材料与元数据补充包采用 [Creative Commons Attribution 4.0 International License](LICENSE)。第三方软件、服务和商标仍受各自条款约束。

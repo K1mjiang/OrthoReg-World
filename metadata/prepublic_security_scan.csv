@@ -1,8 +1,0 @@
-check,matches,status,scope
-email,0,pass,text files inside 36 formal raw export archives
-local_user_path,0,pass,text files inside 36 formal raw export archives
-credential_keyword,0,pass,text files inside 36 formal raw export archives
-device_serial_key,0,pass,text files inside 36 formal raw export archives
-text_files_scanned,1716,information,41760561 uncompressed text bytes
-archive_read_errors,0,pass,
-visual_frame_privacy,not_automated,manual_review_required,"Raw frames show the laboratory scene, operator hands, and occasionally computer displays; review all frames before release."

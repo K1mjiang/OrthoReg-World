@@ -25,6 +25,7 @@ raw-exports/
 *.mp4
 *.MP4
 *.zip
+!data/TMI_OrthoRegWorld_Online_Adaptive_Metadata.zip
 *.xcworkspace
 *.xcodeproj
 *.swift

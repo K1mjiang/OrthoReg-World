@@ -1,8 +1,8 @@
 # Security and disclosure
 
 This repository contains only the public OrthoReg-World project documentation,
-de-identified phantom data, released analysis summaries, and public validation
-code.
+a de-identified non-pixel metadata supplement for 18 Adaptive phantom sessions,
+and the accompanying integrity and verification materials.
 
 Do not open a public issue containing:
 
